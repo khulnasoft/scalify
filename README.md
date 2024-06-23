@@ -1,5 +1,4 @@
 [![PyPI version](https://badge.fury.io/py/scalify.svg)](https://badge.fury.io/py/scalify)
-[![Docs](https://img.shields.io/badge/docs-scalify.khulnasoft.com-blue)](https://www.scalify.khulnasoft.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/AskScalifyAI?style=social)](https://twitter.com/AskScalifyAI)
 
 # Scalify
@@ -181,10 +180,6 @@ Scalify can `paint` images from text:
 ```python
 scalify.paint("a simple cup of coffee, still warm")
 ```
-
-<p align="center">
-  <img src="docs/assets/images/docs/images/coffee.png" style="width: 50%; height: auto;"/>
-</p>
 
 Learn more about image generation [here](https://scalify.khulnasoft.com/docs/images/generation).
 
