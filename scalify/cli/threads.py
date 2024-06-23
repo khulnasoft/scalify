@@ -2,13 +2,13 @@ import os
 from pathlib import Path
 from typing import Optional
 
-import typer
+import cligenius
 from pydantic import BaseModel, ValidationError
 
 from scalify.beta.assistants import Thread
 from scalify.utilities.openai import get_openai_client
 
-threads_app = typer.Typer(no_args_is_help=True)
+threads_app = cligenius.Cligenius(no_args_is_help=True)
 ROOT_DIR = Path.home() / ".scalify/cli/threads"
 DEFAULT_THREAD_NAME = "default"
 
@@ -63,12 +63,12 @@ def get_or_create_thread(name: str = None) -> ThreadData:
 def current():
     """Get the current thread's name."""
     thread_data = get_or_create_thread()
-    typer.echo(f"Current thread: {thread_data.name} (ID: {thread_data.id})")
+    cligenius.echo(f"Current thread: {thread_data.name} (ID: {thread_data.id})")
 
 
 @threads_app.command()
 def clear(
-    thread: str = typer.Option(
+    thread: str = cligenius.Option(
         DEFAULT_THREAD_NAME,
         "--thread",
         "-t",
@@ -77,12 +77,12 @@ def clear(
     ),
 ):
     thread_data = create_thread(thread)
-    typer.echo(f"Thread '{thread_data.name}' cleared. New ID: {thread_data.id}")
+    cligenius.echo(f"Thread '{thread_data.name}' cleared. New ID: {thread_data.id}")
 
 
 @threads_app.command(help="Cancel the most recent run in a thread.")
 def clear_run(
-    thread: str = typer.Option(
+    thread: str = cligenius.Option(
         DEFAULT_THREAD_NAME,
         "--thread",
         "-t",
@@ -99,7 +99,7 @@ def clear_run(
         openai_client.beta.threads.runs.cancel(
             run_id=runs.data[0].id, thread_id=thread_data.id
         )
-        typer.echo(f'Most recent run in thread "{thread_data.name}" cancelled.')
+        cligenius.echo(f'Most recent run in thread "{thread_data.name}" cancelled.')
 
 
 if __name__ == "__main__":

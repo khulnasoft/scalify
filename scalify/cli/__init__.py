@@ -1,5 +1,5 @@
 import sys
-import typer
+import cligenius
 from rich.console import Console
 from typing import Optional
 from scalify.client.openai import AsyncScalifyClient
@@ -12,14 +12,14 @@ from scalify.cli.assistants import assistants_app, say as assistants_say
 
 import platform
 
-from typer import Context, Exit, echo
+from cligenius import Context, Exit, echo
 
 from scalify import __version__
 
-app = typer.Typer(no_args_is_help=True)
+app = cligenius.Cligenius(no_args_is_help=True)
 console = Console()
-app.add_typer(threads_app, name="thread")
-app.add_typer(assistants_app, name="assistant")
+app.add_cligenius(threads_app, name="thread")
+app.add_cligenius(assistants_app, name="assistant")
 app.command(name="say")(assistants_say)
 
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Optional, Union
 
 import httpx
-import typer
+import cligenius
 from pydantic import BaseModel, ValidationError
 from rich.console import Console
 from rich.table import Table
@@ -25,7 +25,7 @@ from scalify.tools.filesystem import (
 from . import threads as threads_cli
 
 console = Console()
-assistants_app = typer.Typer(no_args_is_help=True)
+assistants_app = cligenius.Cligenius(no_args_is_help=True)
 
 ASSISTANTS_DIR = Path.home() / ".scalify/cli/assistants"
 SCRATCHPAD_DIR = ASSISTANTS_DIR / "scratchpad"
@@ -140,17 +140,17 @@ def load_assistant_from_path(path: Union[str, Path]) -> Assistant:
 
 @assistants_app.command("register")
 def register_assistant(
-    path: Path = typer.Argument(
+    path: Path = cligenius.Argument(
         ...,
         help="Path to the Python file containing the assistant object, in the form path/to/file.py:assistant_name",
     ),
-    name: str = typer.Option(
+    name: str = cligenius.Option(
         None,
         "--name",
         "-n",
         help="A name for the assistant, taken from the assistant if not provided. Must be unique.",
     ),
-    overwrite: bool = typer.Option(
+    overwrite: bool = cligenius.Option(
         False,
         "--overwrite",
         "-o",
@@ -160,39 +160,39 @@ def register_assistant(
     try:
         assistant = load_assistant_from_path(path)
     except Exception as exc:
-        typer.echo(exc)
-        raise typer.Exit(1)
+        cligenius.echo(exc)
+        raise cligenius.Exit(1)
 
     name = name or assistant.name
 
     if not name:
-        typer.echo("No name provided and assistant has no name attribute.")
-        raise typer.Exit(1)
+        cligenius.echo("No name provided and assistant has no name attribute.")
+        raise cligenius.Exit(1)
     assistant_data = AssistantData(name=name, path=path)
 
     if not overwrite:
         existing_assistant = load_assistant_data(name)
         if existing_assistant:
-            typer.echo(f"Assistant '{name}' already exists.")
-            raise typer.Exit(1)
+            cligenius.echo(f"Assistant '{name}' already exists.")
+            raise cligenius.Exit(1)
 
     save_assistant(assistant_data)
-    typer.echo(f"Assistant '{name}' registered.")
+    cligenius.echo(f"Assistant '{name}' registered.")
 
 
 @assistants_app.command("delete")
 def delete_assistant(
-    name: str = typer.Argument(..., help="Name of the assistant"),
+    name: str = cligenius.Argument(..., help="Name of the assistant"),
 ):
     assistant_file = get_assistant_file_path(name)
     if assistant_file.exists():
         assistant_file.unlink()
-        typer.echo(
+        cligenius.echo(
             f"Assistant '{name}' deleted. Note: This only removes the "
             "reference to the assistant, not the actual assistant file."
         )
     else:
-        typer.echo(f"Assistant '{name}' not found.")
+        cligenius.echo(f"Assistant '{name}' not found.")
 
 
 @assistants_app.command("list")
@@ -211,33 +211,33 @@ def list_assistants():
 
         console.print(table)
     else:
-        typer.echo("No assistants found.")
+        cligenius.echo("No assistants found.")
 
 
 @assistants_app.command()
 def say(
     message,
-    model: str = typer.Option(
+    model: str = cligenius.Option(
         None,
         "--model",
         "-m",
         help="The model to use. If not provided, the assistant's default model will be used.",
     ),
-    thread: str = typer.Option(
+    thread: str = cligenius.Option(
         None,
         "--thread",
         "-t",
         help="The thread name to send the message to. Set SCALIFY_CLI_THREAD to provide a default.",
         envvar="SCALIFY_CLI_THREAD",
     ),
-    assistant_name: str = typer.Option(
+    assistant_name: str = cligenius.Option(
         None,
         "--assistant",
         "-a",
         help="The name of the assistant to use. Set SCALIFY_CLI_ASSISTANT to provide a default.",
         envvar="SCALIFY_CLI_ASSISTANT",
     ),
-    chat: bool = typer.Option(
+    chat: bool = cligenius.Option(
         False,
         "--chat",
         "-c",
@@ -250,8 +250,8 @@ def say(
         try:
             assistant = load_assistant(assistant_name)
         except Exception as exc:
-            typer.echo(exc)
-            raise typer.Exit(1)
+            cligenius.echo(exc)
+            raise cligenius.Exit(1)
     else:
         assistant = default_assistant
 
@@ -277,20 +277,20 @@ def say(
 
 @assistants_app.command()
 def chat(
-    model: str = typer.Option(
+    model: str = cligenius.Option(
         None,
         "--model",
         "-m",
         help="The model to use. If not provided, the assistant's default model will be used.",
     ),
-    thread: str = typer.Option(
+    thread: str = cligenius.Option(
         None,
         "--thread",
         "-t",
         help="The thread name to send the message to. Set SCALIFY_CLI_THREAD to provide a default.",
         envvar="SCALIFY_CLI_THREAD",
     ),
-    assistant_name: str = typer.Option(
+    assistant_name: str = cligenius.Option(
         None,
         "--assistant",
         "-a",
@@ -304,8 +304,8 @@ def chat(
         try:
             assistant = load_assistant(assistant_name)
         except Exception as exc:
-            typer.echo(exc)
-            raise typer.Exit(1)
+            cligenius.echo(exc)
+            raise cligenius.Exit(1)
     else:
         assistant = default_assistant
 
