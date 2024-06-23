@@ -81,7 +81,7 @@ async def search_github_issues(
     a user.
 
     For example, to search for open issues about AttributeErrors with the
-    label "bug" in khulnasoft/prefect:
+    label "bug" in KhulnaSoft/prefect:
         - repo: khulnasoft/prefect
         - query: label:bug is:open AttributeError
     """

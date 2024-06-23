@@ -126,7 +126,7 @@ def draw_a_movie_poster(
     result_storage=GCS.load("scalify-result-storage"),
 )
 async def daily_github_digest(
-    owner: str = "khulnasoft",
+    owner: str = "KhulnaSoft",
     repo: str = "prefect",
     slack_channel: str = "ask-scalify-tests",
     gh_token_secret_name: str = "github-token",
@@ -187,7 +187,7 @@ if __name__ == "__main__":
 
     asyncio.run(
         daily_github_digest(
-            owner="khulnasoft",
+            owner="KhulnaSoft",
             repo="prefect",
             post_story_to_slack=False,
             lookback_days=1,

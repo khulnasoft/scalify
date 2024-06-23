@@ -17,4 +17,4 @@ octocat = Application(
 
 # > what's the latest release of khulnasoft/scalify?
 
-# see https://github.com/khulnasoft/scalify/pull/875
+# see https://github.com/KhulnaSoft/scalify/pull/875

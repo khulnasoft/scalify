@@ -33,7 +33,7 @@ async def get_latest_release_notes() -> str:
     """Gets the first whole h2 section from the Prefect RELEASE_NOTES.md file."""
     async with httpx.AsyncClient() as client:
         response = await client.get(
-            "https://raw.githubusercontent.com/khulnasoft/prefect/main/RELEASE-NOTES.md"
+            "https://raw.githubusercontent.com/KhulnaSoft/prefect/main/RELEASE-NOTES.md"
         )
         return response.text.split("\n## ")[1]
 

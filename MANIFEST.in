@@ -9,5 +9,5 @@ include LICENSE
 include MANIFEST.in
 
 # Prompt templates
-graft scalify/programs
-graft scalify/prompts
+graft src/scalify/programs
+graft src/scalify/prompts

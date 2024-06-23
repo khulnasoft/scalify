@@ -10,7 +10,7 @@ on:
     branches: ["main"]
     paths:
       - .github/workflows/run-tests.yml
-      - scalify/**
+      - src/**
       - tests/**
       - pyproject.toml
       - setup.py
@@ -18,7 +18,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/run-tests.yml
-      - scalify**
+      - src**
       - tests/**
       - pyproject.toml
       - setup.py

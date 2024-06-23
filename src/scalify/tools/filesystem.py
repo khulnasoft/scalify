@@ -192,20 +192,20 @@ def mkdir(path: str) -> str:
     return f'Successfully created directory "{path}"'
 
 
-def mv(scalify: str, dest: str) -> str:
+def mv(src: str, dest: str) -> str:
     """Moves a file or directory"""
-    scalify = Path(scalify).expanduser()
+    src = Path(src).expanduser()
     dest = Path(dest).expanduser()
-    scalify.rename(dest)
-    return f'Successfully moved "{scalify}" to "{dest}"'
+    src.rename(dest)
+    return f'Successfully moved "{src}" to "{dest}"'
 
 
-def cp(scalify: str, dest: str) -> str:
+def cp(src: str, dest: str) -> str:
     """Copies a file or directory"""
-    scalify = Path(scalify).expanduser()
+    src = Path(src).expanduser()
     dest = Path(dest).expanduser()
-    shutil.copytree(scalify, dest)
-    return f'Successfully copied "{scalify}" to "{dest}"'
+    shutil.copytree(src, dest)
+    return f'Successfully copied "{src}" to "{dest}"'
 
 
 def ls(path: str) -> str:

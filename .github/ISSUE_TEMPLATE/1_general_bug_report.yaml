@@ -7,7 +7,7 @@ body:
       value: >
         Bug reports are often **usage questions, not bugs**. 
         If you do not have a strong understanding of the interface you are reporting a bug for, 
-        please head to the [Scalify docs](https://www.askscalify.ai/) and then ask your question on [Discord](https://discord.gg/Kgw4HpcuYG). 
+        please head to the [Scalify docs](https://www.scalify.khulnasoft.com/) and then ask your question on [Discord](https://discord.gg/Kgw4HpcuYG). 
         You are likely to get a response faster and learn more about the feature you're working with. 
         If the issue is determined to be a bug, please open an issue here.
   
