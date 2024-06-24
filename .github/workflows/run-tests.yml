@@ -60,7 +60,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
       - name: Install Scalify
-        run: pip install ".[tests]"
+        run: |
+          pip install --upgrade pip
+          pip install ".[tests]"
 
       - name: Run tests without LLMs
         run: pytest -n auto -vv -m "${{ matrix.test-type }}"

@@ -46,7 +46,7 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GHA_WORKLOAD_IDENTITY_PROVIDER }}
+          workload_identity_provider: ${{ secrets.ORG_REPO_TOKEN }}
           service_account: scalify-general-main@prefect-org-github-actions.iam.gserviceaccount.com
 
       - name: Configure Google Cloud credential helper
@@ -62,11 +62,11 @@ jobs:
         run: |
           docker build -f cookbook/slackbot/Dockerfile.slackbot . \
             --no-cache \
-            --tag us-docker.pkg.dev/prefect-prd-external-tools/scalify/scalify-community-bot:latest \
-            --tag us-docker.pkg.dev/prefect-prd-external-tools/scalify/scalify-community-bot:${SHORT_SHA} \
+            --tag ghcr.io/khulnasoft/scalify/scalify-community-bot:latest \
+            --tag ghcr.io/khulnasoft/scalify/scalify-community-bot:${SHORT_SHA} \
 
       - name: Push image to prefect-prd-external-tools
-        run: docker push --all-tags us-docker.pkg.dev/prefect-prd-external-tools/scalify/scalify-community-bot
+        run: docker push --all-tags ghcr.io/khulnasoft/scalify/scalify-community-bot
 
       - name: Trigger cloudrun revision deploy workflow
         run: |

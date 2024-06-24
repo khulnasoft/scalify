@@ -24,13 +24,13 @@ jobs:
       - name: Authenticate to google cloud
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GHA_WORKLOAD_IDENTITY_PROVIDER }}
+          workload_identity_provider: ${{ secrets.ORG_REPO_TOKEN }}
           service_account: scalify-workflow-main@prefect-org-github-actions.iam.gserviceaccount.com
 
       - name: Deploy revision
         uses: google-github-actions/deploy-cloudrun@v2
         with:
-          image: us-docker.pkg.dev/prefect-prd-external-tools/scalify/scalify-community-bot:latest
+          image: ghcr.io/khulnasoft/scalify/scalify-community-bot:latest
           project_id: prefect-prd-external-tools
           region: us-east1
           service: scalify-community-bot
