@@ -30,7 +30,7 @@ jobs:
       - name: Deploy revision
         uses: google-github-actions/deploy-cloudrun@v2
         with:
-          image: ghcr.io/khulnasoft/scalify/scalify-community-bot:latest
+          image: ghcr.io/khulnasoft/scalify/scalify-community-bot:${{ github.sha }}
           project_id: prefect-prd-external-tools
           region: us-east1
           service: scalify-community-bot
