@@ -1,5 +1,5 @@
 [![PyPI version](https://badge.fury.io/py/scalify.svg)](https://badge.fury.io/py/scalify)
-[![Twitter Follow](https://img.shields.io/twitter/follow/AskScalifyAI?style=social)](https://twitter.com/AskScalifyAI)
+[![Twitter Follow](https://img.shields.io/twitter/follow/ScalifyAI?style=social)](https://twitter.com/ScalifyAI)
 
 # Scalify
 
