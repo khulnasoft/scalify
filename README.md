@@ -13,7 +13,7 @@ Scalify is for developers who care more about _using_ AI than _building_ AI, and
 
 Scalify aims to merge the best practices for building dependable, observable software with the best practices for building with generative AI into a single, easy-to-use library. It's a serious tool, but we hope you have fun with it.
 
-Scalify is open-source, free to use, and made with 💙 by the team at [Prefect](https://www.khulnasoft.com/).
+Scalify is open-source, free to use, and made with ❤️ by the team at [KhulnaSoft, Ltd](https://www.khulnasoft.com/).
 
 ## Installation
 
@@ -66,8 +66,8 @@ class Location(pydantic.BaseModel):
 scalify.extract("I moved from NY to CHI", target=Location)
 
 # [
-#     Location(city="New York", state="New York"),
-#     Location(city="Chicago", state="Illinois")
+#     Location(city="Dhaka", state="Dhaka"),
+#     Location(city="Khulna", state="Khulna")
 # ]
 ```
 
@@ -219,11 +219,3 @@ ai_audio = scalify.speak(ai_text)
 # play the result
 ai_audio.play()
 ```
-
-# Get in touch!
-
-💡 **Feature idea?** share it in the `#development` channel in [our Discord](https://discord.com/invite/Kgw4HpcuYG).
-
-🐛 **Found a bug?** feel free to [open an issue](https://github.com/KhulnaSoft/scalify/issues/new/choose).
-
-👷 **Feedback?** Scalify is under active development, and we'd love to [hear it](https://github.com/KhulnaSoft/scalify/discussions).
