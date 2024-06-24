@@ -1,9 +1,7 @@
-# Scalify AI
+# Scalify AI - The AI engineering toolkit
 
 [![PyPI version](https://badge.fury.io/py/scalify.svg)](https://badge.fury.io/py/scalify)
-[![Twitter Follow](https://img.shields.io/twitter/follow/ScalifyAI?style=social)](https://twitter.com/khulnasoft)
-
-### The AI engineering toolkit
+[![Twitter Follow](https://img.shields.io/twitter/follow/khulnasoft?style=social)](https://twitter.com/khulnasoft)
 
 Scalify is a lightweight AI toolkit for building natural language interfaces that are reliable, scalable, and easy to trust.
 
