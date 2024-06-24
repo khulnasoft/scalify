@@ -1,7 +1,7 @@
-[![PyPI version](https://badge.fury.io/py/scalify.svg)](https://badge.fury.io/py/scalify)
-[![Twitter Follow](https://img.shields.io/twitter/follow/ScalifyAI?style=social)](https://twitter.com/ScalifyAI)
+# Scalify AI
 
-# Scalify
+[![PyPI version](https://badge.fury.io/py/scalify.svg)](https://badge.fury.io/py/scalify)
+[![Twitter Follow](https://img.shields.io/twitter/follow/ScalifyAI?style=social)](https://twitter.com/khulnasoft)
 
 ### The AI engineering toolkit
 
