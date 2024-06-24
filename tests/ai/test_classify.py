@@ -1,8 +1,8 @@
 from enum import Enum
 from typing import Literal
 
-import scalify
 import pytest
+import scalify
 from pydantic import BaseModel
 
 Sentiment = Literal["Negative", "Positive"]
@@ -172,7 +172,9 @@ class TestClassify:
 
 class TestMapping:
     def test_classify_map(self):
-        result = scalify.classify.map(["This is great!", "This is terrible!"], Sentiment)
+        result = scalify.classify.map(
+            ["This is great!", "This is terrible!"], Sentiment
+        )
         assert isinstance(result, list)
         assert result == ["Positive", "Negative"]
 

@@ -1,11 +1,11 @@
 import scalify
+from pydantic_settings import SettingsConfigDict
 from scalify.settings import (
     AssistantSettings,
     Settings,
     SpeechSettings,
     temporary_settings,
 )
-from pydantic_settings import SettingsConfigDict
 
 
 class TestApiKeySetting:

@@ -5,8 +5,8 @@ import scalify.tools
 import scalify.tools.filesystem
 import scalify.tools.python
 import scalify.tools.shell
-from scalify.beta.applications import Application
 from pydantic import BaseModel, Field
+from scalify.beta.applications import Application
 
 scalify.settings.log_level = "DEBUG"
 scalify.settings.llm_model = "gpt-4o"

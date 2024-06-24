@@ -1,8 +1,8 @@
 from unittest.mock import AsyncMock, patch
 
-import scalify
 import openai
 import pytest
+import scalify
 from scalify.beta.assistants import Assistant
 from scalify.tools.assistants import CodeInterpreter
 

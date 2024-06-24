@@ -1,5 +1,5 @@
-import scalify
 import pytest
+import scalify
 
 
 @pytest.fixture(autouse=True)

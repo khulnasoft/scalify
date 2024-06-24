@@ -6,9 +6,9 @@ see https://x.com/Nathan_Nowack/status/1785413529232708087
 
 import logfire
 import openai
+from pydantic import BaseModel, Field
 from scalify import fn
 from scalify.client import AsyncScalifyClient
-from pydantic import BaseModel, Field
 
 client = openai.AsyncClient()
 

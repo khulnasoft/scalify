@@ -2,8 +2,8 @@ import json
 from datetime import date, datetime
 
 import pytest
-from scalify.utilities.pydantic import parse_as
 from pydantic import BaseModel
+from scalify.utilities.pydantic import parse_as
 
 
 class ExampleModel(BaseModel):

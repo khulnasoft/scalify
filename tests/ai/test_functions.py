@@ -3,8 +3,8 @@ from enum import Enum
 from typing import Dict, List, Literal
 from unittest.mock import patch
 
-import scalify
 import pytest
+import scalify
 from pydantic import BaseModel
 
 

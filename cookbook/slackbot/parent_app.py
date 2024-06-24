@@ -3,8 +3,12 @@ import json
 from contextlib import asynccontextmanager
 from typing import Annotated
 
-from readyapi import ReadyAPI
 from jinja2 import Template
+from prefect.events import Event, emit_event
+from prefect.events.clients import PrefectCloudEventSubscriber
+from prefect.events.filters import EventFilter
+from pydantic import Field
+from readyapi import ReadyAPI
 from scalify import fn
 from scalify.beta.applications import Application
 from scalify.beta.applications.state.json_block import JSONBlockState
@@ -12,10 +16,6 @@ from scalify.beta.assistants import Assistant
 from scalify.utilities.logging import get_logger
 from scalify.utilities.slack import get_user_name
 from scalify.utilities.strings import count_tokens
-from prefect.events import Event, emit_event
-from prefect.events.clients import PrefectCloudEventSubscriber
-from prefect.events.filters import EventFilter
-from pydantic import Field
 from typing_extensions import TypedDict
 from websockets.exceptions import ConnectionClosedError
 

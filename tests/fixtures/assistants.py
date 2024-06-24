@@ -9,5 +9,7 @@ def mock_default_run_handler_class():
     printing assistant output during tests"""
     mock = Mock()
     mock.return_value = None
-    with patch("scalify.beta.assistants.assistants.default_run_handler_class", new=mock):
+    with patch(
+        "scalify.beta.assistants.assistants.default_run_handler_class", new=mock
+    ):
         yield

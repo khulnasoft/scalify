@@ -1,8 +1,8 @@
-from scalify import fn
-from scalify.utilities.slack import post_slack_message
 from prefect import task
 from prefect.blocks.system import JSON, Secret, String
 from prefect.exceptions import ObjectNotFound
+from scalify import fn
+from scalify.utilities.slack import post_slack_message
 
 """
 Define a map between keywords and the relationships we want to check for

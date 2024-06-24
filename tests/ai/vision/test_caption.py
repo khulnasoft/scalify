@@ -1,5 +1,5 @@
-import scalify
 import pytest
+import scalify
 from scalify.utilities.testing import assert_equal
 
 

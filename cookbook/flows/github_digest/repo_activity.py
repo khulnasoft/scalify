@@ -2,12 +2,12 @@ import inspect
 from datetime import UTC, date, datetime, timedelta
 
 import scalify
-from scalify.utilities.jinja import BaseTemplate, JinjaEnvironment
-from scalify.utilities.slack import post_slack_message
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
 from prefect.blocks.system import JSON, Secret
 from prefect.filesystems import GCS
+from scalify.utilities.jinja import BaseTemplate, JinjaEnvironment
+from scalify.utilities.slack import post_slack_message
 from utils import fetch_contributor_data
 
 CHANNEL_MAP = JSON.load("slack-channel-name-to-id-map").value

@@ -1,7 +1,7 @@
 import pytest
+from pydantic import BaseModel
 from scalify.types import BaseMessage, ImageFileContentBlock, ImageUrl, TextContentBlock
 from scalify.utilities.jinja import Transcript
-from pydantic import BaseModel
 
 
 class ExampleModel(BaseModel):

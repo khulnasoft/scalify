@@ -1,7 +1,7 @@
 from enum import Enum
 
-import scalify
 import pytest
+import scalify
 
 
 @scalify.classifier

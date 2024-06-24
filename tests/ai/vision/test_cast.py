@@ -1,7 +1,7 @@
-import scalify
 import pytest
-from scalify.utilities.testing import assert_locations_equal
+import scalify
 from pydantic import BaseModel, Field
+from scalify.utilities.testing import assert_locations_equal
 
 
 class Location(BaseModel):

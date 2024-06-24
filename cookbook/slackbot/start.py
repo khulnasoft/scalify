@@ -4,8 +4,12 @@ import re
 
 import scalify
 import uvicorn
-from readyapi import ReadyAPI, HTTPException, Request
 from keywords import handle_keywords
+from parent_app import emit_assistant_completed_event, get_notes_for_user, lifespan
+from prefect import flow, task
+from prefect.blocks.system import JSON
+from prefect.states import Completed
+from readyapi import HTTPException, ReadyAPI, Request
 from scalify.beta.applications import Application
 from scalify.beta.applications.state.json_block import JSONBlockState
 from scalify.beta.assistants import Assistant, Thread
@@ -18,10 +22,6 @@ from scalify.utilities.slack import (
     post_slack_message,
 )
 from scalify.utilities.strings import count_tokens, slice_tokens
-from parent_app import emit_assistant_completed_event, get_notes_for_user, lifespan
-from prefect import flow, task
-from prefect.blocks.system import JSON
-from prefect.states import Completed
 from tools import get_info, get_prefect_code_example, search_prefect_docs
 
 BOT_MENTION = r"<@(\w+)>"
@@ -194,6 +194,8 @@ async def chat_endpoint(request: Request):
 
 if __name__ == "__main__":
     if not os.getenv("OPENAI_API_KEY", None):  # TODO: Remove this
-        os.environ["OPENAI_API_KEY"] = scalify.settings.openai.api_key.get_secret_value()
+        os.environ[
+            "OPENAI_API_KEY"
+        ] = scalify.settings.openai.api_key.get_secret_value()
 
     uvicorn.run(app, host="0.0.0.0", port=4200)

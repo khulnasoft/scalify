@@ -1,9 +1,9 @@
-import scalify
 import pytest
+import scalify
+from openai.types.chat import ChatCompletion
 from scalify.client.openai import AsyncScalifyClient, ScalifyClient
 from scalify.settings import temporary_settings
 from scalify.types import BaseMessage, StreamingChatResponse
-from openai.types.chat import ChatCompletion
 
 
 class TestStreaming:

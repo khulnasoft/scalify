@@ -1,6 +1,6 @@
 from gh_util.api import functions  # pip install gh-util
-from scalify.beta.applications import Application
 from pydantic import BaseModel, Field
+from scalify.beta.applications import Application
 
 
 class Memory(BaseModel):

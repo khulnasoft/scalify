@@ -17,8 +17,8 @@ SCALIFY_CHAT_COMPLETIONS_MODEL=<your Azure OpenAI deployment name>
 from enum import Enum
 
 import scalify
-from scalify.settings import temporary_settings
 from pydantic import BaseModel
+from scalify.settings import temporary_settings
 
 
 class Sentiment(Enum):

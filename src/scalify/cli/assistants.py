@@ -4,8 +4,8 @@ import platform
 from pathlib import Path
 from typing import Optional, Union
 
-import httpx
 import cligenius
+import httpx
 from pydantic import BaseModel, ValidationError
 from rich.console import Console
 from rich.table import Table

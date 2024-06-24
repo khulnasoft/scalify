@@ -2,10 +2,10 @@ from enum import Enum
 
 import logfire
 import openai
+from pydantic import BaseModel
 from readyapi import Body, ReadyAPI
 from scalify import fn
 from scalify.client import AsyncScalifyClient
-from pydantic import BaseModel
 
 app = ReadyAPI()
 client = openai.AsyncClient()

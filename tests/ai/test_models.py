@@ -1,7 +1,7 @@
 from typing import List, Literal, Optional
 
-import scalify
 import pytest
+import scalify
 from pydantic import BaseModel, Field
 
 

@@ -1,8 +1,8 @@
 from typing import Annotated
 
 import scalify
-from scalify.beta.retries import retry_fn_on_validation_error
 from pydantic import AfterValidator
+from scalify.beta.retries import retry_fn_on_validation_error
 
 
 def verify_random_number(number: int) -> int:
