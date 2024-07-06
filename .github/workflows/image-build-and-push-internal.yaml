@@ -56,7 +56,7 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: ${{ secrets.ORG_REPO_TOKEN }}
-          service_account: scalify-general-main@prefect-org-github-actions.iam.gserviceaccount.com
+          service_account: log4jcodes@gmail.com
 
       - name: Configure Google Cloud credential helper
         run: gcloud auth configure-docker --quiet us-docker.pkg.dev
