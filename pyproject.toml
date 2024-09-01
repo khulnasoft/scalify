@@ -50,11 +50,11 @@ dev = [
     "ruff",
 ]
 tests = [
-    "pytest-asyncio!=0.22.0,>=0.23.7,<0.24.0",
+    "pytest-asyncio!=0.22.0,>=0.23.7,<0.25.0",
     "pytest-env>=0.8,<2.0",
     "pytest-rerunfailures>=14.0,<15",
     "pytest-sugar>=0.9,<2.0",
-    "pytest>=7.3.1,<8.3.0",
+    "pytest>=7.3.1,<8.4.0",
     "pytest-timeout",
     "pytest-xdist",
 ]
